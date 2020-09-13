@@ -5,67 +5,69 @@
 		<meta name="viewport" content="width=devide-width, initial-scale=1">
 	
 		<link rel="stylesheet" href="css/bootstrap.grid.min.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/componente.css">
+		<link rel="stylesheet" href="css/base.css">
 		<title>MyPilas</title>
 	</head>
-	<body>
-		<header>
+	<body> 
+		<header class="layout-cabecalho">
 			<div class="container">
 				<img src="images/logo.png" width="100px" height="35px" alt="MyPilas">
 			</div>
 		</header>
 
-		<div id="planos">
+		<div id="planos" class="layout-planos">
 			<div class="container">
 				
 				<div class="row">
 					<div class="col-sm-4">
-						<article>
-							<h2>Autonômo</h2>
-							<div>R$ 59/mês</div>
-							<ul>
+						<article class="plano">
+							<h2 class="plano__cabecalho">Autonômo</h2>
+							<div class="plano__preco">R$ 59/mês</div>
+							<ul class="plano__caracteristica">
 								<li>Até <strong>2 usuários</strong></li>
 								<li><strong>500MB</strong> de armazenamento</li>
 								<li>Lançamentos ilimitados</li>
 								<li>Acesso seguro</li>
 								<li>Sem fidelidade</li>
 							</ul>
-							<footer>
-								<a class="botao" href="assinar.html">Assinar</a>
+							<footer class="plano__rodape">
+								<a class="botao botao--assinar" href="assinar.html">Assinar</a>
 							</footer>
 						</article>
 					</div>
 
 					<div class="col-sm-4">
-						<article>
-							<h2>Micro</h2>
-							<div>R$ 89/mês</div>
-							<ul>
+						<article class="plano">
+							<h2 class="plano__cabecalho">Micro</h2>
+							<div class="plano__preco">R$ 89/mês</div>
+							<ul class="plano__caracteristica">
 								<li>Até <strong>5 usuários</strong></li>
 								<li><strong>1GB</strong> de armazenamento</li>
 								<li>Lançamentos ilimitados</li>
 								<li>Acesso seguro</li>
 								<li>Sem fidelidade</li>
 							</ul>
-							<footer>
-								<a class="botao" href="assinar.html">Assinar</a>
+							<footer class="plano__rodape">
+								<a class="botao botao--assinar" href="assinar.html">Assinar</a>
 							</footer>
 						</article>
 					</div>
 
 					<div class="col-sm-4">
-						<article>
-							<h2>Pequena</h2>
-							<div>R$ 99/mês</div>
-							<ul>
+						<article class="plano">
+							<h2 class="plano__cabecalho">Pequena</h2>
+							<div class="plano__preco">R$ 99/mês</div>
+							<ul class="plano__caracteristica">
 								<li>Até <strong>10 usuários</strong></li>
 								<li><strong>5GB</strong> de armazenamento</li>
 								<li>Lançamentos ilimitados</li>
 								<li>Acesso seguro</li>
 								<li>Sem fidelidade</li>
 							</ul>
-							<footer>
-								<a class="botao" href="assinar.html">Assinar</a>
+							<footer class="plano__rodape">
+								<a class="botao botao--assinar" href="assinar.html">Assinar</a>
 							</footer>
 						</article>
 					</div>
