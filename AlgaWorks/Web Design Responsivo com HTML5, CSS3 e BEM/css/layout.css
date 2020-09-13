@@ -1,19 +1,27 @@
 .layout-cabecalho {
 	border-bottom: 1px solid #ccc;
 	height: 60px;
+	line-height: 60px;
+
+	background-color: #fff;
 }
 
-.layout-cabecalho img {
-	margin-top: 12px;
+.layout-cabecalho--home {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1;
+
 }
 
 .layout-planos {
 	padding: 80px 0;
 }
 
-
 .layout-propaganda {
 	padding: 80px 0;
+	margin-top: 60px;
 
 	background-color: #7ab55c
 }
@@ -31,4 +39,10 @@
 	color: #fff;
 
 	text-align: center;
+}
+
+@media(max-width: 749px){
+	.layout-planos .row > div:not(.ultima-coluna) {
+		margin-bottom: 40px;
+	}
 }

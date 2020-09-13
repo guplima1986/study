@@ -7,7 +7,22 @@
 
 	font-size: 1.4rem;
 
+	position: relative;
+}
 
+.plano--mais-popular::after {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	padding: 0 10px;
+
+	background-color: #c20303;
+	color: #fff;
+
+	font-size: 0.7142em;
+	line-height: 2.5;
+
+	content: "MAIS POPULAR";
 }
 
 .plano__cabecalho {
@@ -53,6 +68,7 @@
 	background-color: #bbb;
 	color: #fff;
 
+	line-height: normal;
 	font-size: 1em;
 	text-decoration: none;
 }
@@ -63,13 +79,14 @@
 	text-decoration: none;
 }
 
-.botao--assinar {
+.botao--assinar, .botao--login{
 	background-color: #127d00;
 
 	border-radius: 10px;
 }
 
-.botao--assinar:hover, .botao--assinar:focus {
+.botao--assinar:hover, .botao--assinar:focus,
+.botao--login:hover, .botao--login:focus {
 	background-color: #0e6400;
 }
 
@@ -86,7 +103,7 @@
 
 
 /***************\
-*****CHAMADA*******
+***PROPAGANDA****
 \***************/
 
 .propaganda {
@@ -129,12 +146,11 @@
 }
 
 /***************\
-*****DEPOIMENTO*******
+***DEPOIMENTO***
 \***************/
 
 .depoimento {
 	font-size: 2.2rem;
-
 }
 
 @media(min-width: 992px){
@@ -147,11 +163,25 @@
 }
 
 .depoimento__texto-autor {
+	position: relative;
 	margin: 0;
 	padding:  0 60px;
 
 	text-align: center;
 	font-size: 1em;
+}
+
+.depoimento__texto-autor::before {
+	position: absolute;
+	top: -0.36em;
+	left: 0;
+
+	color: #ccc;
+
+	font-size: 8em;
+
+	content: "\201C";
+
 }
 
 .depoimento__autor {
@@ -167,4 +197,71 @@
 
 .depoimento__nome-autor {
 	margin-top: 10px;
+}
+
+
+/***************\
+***NAVEGAÇÂO***
+\***************/
+
+.navegacao {
+
+}
+
+.navegacao__menu {
+	float: right;
+}
+
+
+.botao-chaveador{
+	width: 24px;
+	height: 24px;
+	border: 0;
+
+	background: none;
+	background-image: url("../images/bars.png");
+
+	outline: none;
+
+}
+
+@media(min-width: 992px){
+
+	.botao-chaveador{
+		display: none;
+	}
+
+}
+
+/***************\
+*******MENU******
+\***************/
+
+.menu {
+	position: fixed;
+	top:0;
+	left: 0;
+	bottom: 0;
+
+	width: 200px;
+	margin: 0;
+	padding: 20px;
+	border-right: 1px solid #eee;
+
+	font-size: 1.4rem;
+
+	background-color: #fbfbfb;
+
+	list-style: none;
+
+}
+
+.menu__item {
+	display: block;
+
+	line-height: 3;
+}
+
+.menu__item--botao {
+	margin-top: 20px;
 }
