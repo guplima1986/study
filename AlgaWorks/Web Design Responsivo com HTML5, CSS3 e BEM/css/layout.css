@@ -41,6 +41,10 @@
 	text-align: center;
 }
 
+.layout-assinatura {
+	padding: 40px 0;
+}
+
 @media(max-width: 749px){
 	.layout-planos .row > div:not(.ultima-coluna) {
 		margin-bottom: 40px;

@@ -67,6 +67,7 @@
 	
 	background-color: #bbb;
 	color: #fff;
+	border:none;
 
 	line-height: normal;
 	font-size: 1em;
@@ -212,6 +213,10 @@
 	float: right;
 }
 
+.navegacao--assinatura {
+	text-align: center;
+}
+
 
 .botao-chaveador{
 	width: 24px;
@@ -238,30 +243,85 @@
 \***************/
 
 .menu {
-	position: fixed;
-	top:0;
-	left: 0;
-	bottom: 0;
-
-	width: 200px;
 	margin: 0;
-	padding: 20px;
-	border-right: 1px solid #eee;
-
+	
 	font-size: 1.4rem;
-
-	background-color: #fbfbfb;
 
 	list-style: none;
 
 }
 
-.menu__item {
-	display: block;
+@media(max-width: 991px){
+	.menu {
+		position: fixed;
+		top:0;
+		left: 0;
+		bottom: 0;
 
-	line-height: 3;
+		display: none;
+		width: 200px;
+		padding: 20px;
+		border-right: 1px solid #eee;
+
+		background-color: #fbfbfb;
+
+	}
+
+	.menu--exibindo{
+		display: block;
+	}
+
+	.menu__item {
+		display: block;
+
+		line-height: 3;
+	}
+
+	.menu__item--botao {
+		margin-top: 20px;
+	}
 }
 
-.menu__item--botao {
-	margin-top: 20px;
+@media(min-width: 992px){
+
+	.menu__item {
+		display: inline-block;
+		padding-right: 20px;
+	}
+
+	.menu__item:last-of-type {
+		padding-right: 0px;
+	}
+
+}
+
+
+/***************\
+****FORMULARIO***
+\***************/
+.titulo-formulario {
+	margin: 0;
+	margin-bottom: 40px;
+
+	border-bottom: 1px solid #ccc;
+
+	font-size: 2.6rem;
+	font-weight: normal;
+	color: #004b86;
+}
+
+.grupo-entrada {
+	margin-bottom: 15px;
+}
+
+.grupo-entrada > label {
+	display: block;
+
+	font-weight: bold;
+
+}
+
+.campo {
+	display: block;
+	width: 100%;
 }
