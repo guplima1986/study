@@ -6,12 +6,33 @@
 
 #textRed {
   color: red;
+  border: 2px solid red;
 }
 
 #textGreen {
   color: green;
+  border: 2px solid green;
 }
 
 #textBlue {
   color: blue;
+  border: 2px solid blue;
+}
+
+.inputRed {
+  appearance: none;
+  height: 0.5em;
+  background-color: red;
+}
+
+.inputGreen {
+  appearance: none;
+  height: 0.5em;
+  background-color: green;
+}
+
+.inputBlue {
+  appearance: none;
+  height: 0.5em;
+  background-color: blue;
 }

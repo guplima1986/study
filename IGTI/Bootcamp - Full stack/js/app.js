@@ -9,11 +9,9 @@ function start() {
   green.addEventListener('input', createColor);
   blue.addEventListener('input', createColor);
 }
-
+//prettier-ignore
 function createColor() {
-  document.getElementById(
-    'colorDemonstration'
-  ).style.backgroundColor = makeRGB();
+  document.getElementById('colorDemonstration').style.backgroundColor = makeRGB();
 }
 
 function makeRGB() {
