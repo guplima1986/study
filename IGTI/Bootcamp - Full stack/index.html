@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Desafio 01</title>
+  </head>
+  <body>
+    <h1>Desafio 1</h1>
+    <table>
+      <thead>
+        <tr>
+          <th id="textRed">Red</th>
+          <th id="textGreen">Green</th>
+          <th id="textBlue">Blue</th>
+        </tr>
+      </thead>
+      <!-- prettier-ignore -->
+      <tbody>
+        <tr>
+          <td><input type="range" name="red" id="idRed" min="0" max="255" value ="0"/></td>
+          <td><input type="range" name="green" id="idGreen" min="0" max="255" value ="0"/></td>
+          <td><input type="range" name="blue" id="idBlue" min="0" max="255" value ="0"/></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="colorDemonstration"></div>
+  </body>
+  <script src="js/app.js"></script>
+</html>

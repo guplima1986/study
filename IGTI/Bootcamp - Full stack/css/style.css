@@ -1,0 +1,17 @@
+#colorDemonstration {
+  background-color: rgb(0, 0, 0);
+  width: 407px;
+  height: 100px;
+}
+
+#textRed {
+  color: red;
+}
+
+#textGreen {
+  color: green;
+}
+
+#textBlue {
+  color: blue;
+}
