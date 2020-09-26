@@ -1,4 +1,8 @@
 let todosUsuarios = [];
+let totalSexoMasculino = 0;
+let totalSexoFeminino = 0;
+let somaIdades = 0;
+let mediaIdades = 0;
 
 window.addEventListener('load', () => {
   tabUsuarios = document.querySelector('#tabUsuarios');
@@ -7,6 +11,8 @@ window.addEventListener('load', () => {
   countSexoMasculino = document.querySelector('#sexoMasculino');
   countSexoFeminino = document.querySelector('#sexoFeminino');
 
+  botaoPesquisar = document.querySelector('#botaoPesquisar');
+  totalUsuarios = document.querySelector('#totalUsuarios');
   countIdades = document.querySelector('#somaIdades');
   mediaIdades = document.querySelector('#mediaIdades');
 
@@ -24,40 +30,40 @@ async function fetchUsuarios() {
     .map((usuario) => {
       const { name, gender, dob, picture } = usuario;
       return {
-        name: name.first + ' ' + name.last,
-        gender: gender,
-        age: dob.age,
-        picture: picture.medium,
+        nome: name.first + ' ' + name.last,
+        sexo: gender,
+        idade: dob.age,
+        foto: picture.thumbnail,
       };
     })
     .sort((a, b) => {
-      return a.name.localeCompare(b.name);
+      return a.nome.localeCompare(b.nome);
     });
+
   render();
 }
 
 function render() {
   fetchUsuarios();
-  renderUsuariosList();
 }
 
 function formatNumber(number) {
   return numberFormat.format(number);
 }
 
-function renderUsuariosList() {
+function renderUsuariosList(pesquisaUsuarios) {
   let usuariosHTML = '<div>';
 
-  todosUsuarios.forEach((usuario) => {
-    const { name, gender, age, picture } = usuario;
+  pesquisaUsuarios.forEach((usuario) => {
+    const { nome, sexo, idade, foto } = usuario;
 
     const usuarioHMTL = `
       <div class='usuarios'>
         <div>
             <ul>
                 <li>
-                <img src="${picture}" alt="${name}" class="img-fluid" alt="Responsive image">
-                ${name}, ${age} anos
+                <img src="${foto}" alt="${nome}" class="img-fluid" alt="Responsive image">
+                ${nome}, ${idade} anos
                 </li>
             </ul>
         </div>
@@ -69,4 +75,41 @@ function renderUsuariosList() {
   usuariosHTML += '</div> ';
 
   tabUsuarios.innerHTML = usuariosHTML;
+}
+
+function renderEstatistica(pesquisaUsuarios) {
+  countSexoMasculino.textContent = pesquisaUsuarios.filter(
+    (usuario) => usuario.sexo === 'male'
+  ).length;
+
+  countSexoFeminino.textContent = pesquisaUsuarios.filter(
+    (usuario) => usuario.sexo === 'female'
+  ).length;
+
+  const totalIdade = pesquisaUsuarios.reduce((acc, curr) => {
+    return acc + curr.idade;
+  }, 0);
+
+  const totalUser = pesquisaUsuarios.length;
+
+  const media = totalIdade / totalUser;
+
+  countIdades.textContent = formatNumber(totalIdade);
+  totalUsuarios.textContent = totalUser;
+  mediaIdades.textContent = media;
+}
+
+function findUsuario(texto) {
+  pesquisaUsuarios = todosUsuarios.filter((usuario) =>
+    usuario.nome.toLowerCase().includes(texto.toLowerCase())
+  );
+  renderUsuariosList(pesquisaUsuarios);
+  renderEstatistica(pesquisaUsuarios);
+  render();
+}
+
+function renderButton() {
+  botaoPesquisar.addEventListener('click', () =>
+    findUsuario(document.getElementById('idInput').value)
+  );
 }

@@ -15,18 +15,27 @@
         <h1>Pesquisa de usuário</h1>
         <div class="row">
           <input
+            id="idInput"
             type="text"
             placeholder="Digite o nome que deseja buscar"
             class="input-busca"
           />
+          <button
+            id="botaoPesquisar"
+            onclick="renderButton()"
+            class="btn btn-success"
+          >
+            Pesquisar
+          </button>
         </div>
       </div>
     </div>
 
     <div class="container-fluid">
       <div class="row">
-        <div id="tabUsuarios" class="col-sm-5 div-usuario">
+        <div class="col-sm-5 div-usuario">
           <h2><span id="totalUsuarios"></span> usuário(s) encontrados(s)</h2>
+          <div id="tabUsuarios"></div>
         </div>
 
         <div id="tabEstatistica" class="col-sm-5 div-estatistica">
@@ -34,7 +43,7 @@
           <div>Sexo Masculino: <span id="sexoMasculino"></span></div>
           <div>Sexo Feminino: <span id="sexoFeminino"></span></div>
           <div>Soma das idades: <span id="somaIdades"></span></div>
-          <div>Médias das idades <span id="mediaIdades"></span>:</div>
+          <div>Médias das idades: <span id="mediaIdades"></span>:</div>
         </div>
       </div>
     </div>
