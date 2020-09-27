@@ -77,3 +77,14 @@ minhaPromise()
   .catch(function (error) {
     console.warn(error);
   });
+
+/** AXIOS */
+
+axios
+  .get('https://api.github.com/users/guplima1986')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.warn(error);
+  });
