@@ -47,7 +47,7 @@ function render() {
   fetchUsuarios();
 }
 
-function formatNumber(number) {
+function formatarNumeros(number) {
   return numberFormat.format(number);
 }
 
@@ -94,7 +94,7 @@ function renderEstatistica(pesquisaUsuarios) {
 
   const media = totalIdade / totalUser;
 
-  countIdades.textContent = formatNumber(totalIdade);
+  countIdades.textContent = formatarNumeros(totalIdade);
   totalUsuarios.textContent = totalUser;
   mediaIdades.textContent = media;
 }
